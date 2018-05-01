@@ -84,11 +84,11 @@ class Home extends CI_Controller {
 		$notificationCode = $this->input->post('notificationCode');
 
 		// campos default
-		$data['token'] ='AC46E889ABED49BCBE19B8F8BF5538C8'; // sandbox
-		$data['email'] = 'marcosmqueiroz@live.com'; // sandbox
+		$data['token'] ='seu_token'; // sandbox
+		$data['email'] = 'seu_email'; // sandbox
 		
-		// $data['token'] ='AFD2F3C8FA174109B759406924EA3037'; // produção
-		// $data['email'] = 'marcosmqueiroz@live.com'; // produção
+		// $data['token'] ='seu_token'; // produção
+		// $data['email'] = 'seu_email'; // produção
 
 		$data = http_build_query($data);
 
@@ -121,11 +121,11 @@ class Home extends CI_Controller {
 	private function get_codigo_pagamento($produtos = null, $reference = null)
 	{
 		// campos default
-		$data['token'] ='AC46E889ABED49BCBE19B8F8BF5538C8'; // sandbox
-		$data['email'] = 'marcosmqueiroz@live.com'; // sandbox
+		$data['token'] ='seu_token'; // sandbox
+		$data['email'] = 'seu_email'; // sandbox
 		
-		// $data['token'] ='AFD2F3C8FA174109B759406924EA3037'; // produção
-		// $data['email'] = 'marcosmqueiroz@live.com'; // produção
+		// $data['token'] ='seu_token'; // produção
+		// $data['email'] = 'seu_email'; // produção
 		
 		$data['currency'] = 'BRL';
 		$data['reference'] = $reference;
