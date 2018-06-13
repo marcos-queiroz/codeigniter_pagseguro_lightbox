@@ -84,16 +84,16 @@ class Home extends CI_Controller {
 		$notificationCode = $this->input->post('notificationCode');
 
 		// campos default
-		$data['token'] ='seu_token'; // sandbox
-		$data['email'] = 'seu_email'; // sandbox
+		// $data['token'] ='seu_token'; // sandbox
+		// $data['email'] = 'seu_email'; // sandbox
 		
-		// $data['token'] ='seu_token'; // produção
-		// $data['email'] = 'seu_email'; // produção
+		$data['token'] ='seu_token'; // produção
+		$data['email'] = 'seu_email'; // produção
 
 		$data = http_build_query($data);
 
-		$url = 'https://ws.sandbox.pagseguro.uol.com.br/v3/transactions/notifications/'.$notificationCode.'?'.$data; // sandbox
-		// $url = 'https://ws.pagseguro.uol.com.br/v3/transactions/notifications/'.$notificationCode.'?'.$data; // produção
+		// $url = 'https://ws.sandbox.pagseguro.uol.com.br/v3/transactions/notifications/'.$notificationCode.'?'.$data; // sandbox
+		$url = 'https://ws.pagseguro.uol.com.br/v3/transactions/notifications/'.$notificationCode.'?'.$data; // produção
 
 		$curl = curl_init();
 		curl_setopt($curl, CURLOPT_RETURNTRANSFER, true);
@@ -121,11 +121,11 @@ class Home extends CI_Controller {
 	private function get_codigo_pagamento($produtos = null, $reference = null)
 	{
 		// campos default
-		$data['token'] ='seu_token'; // sandbox
-		$data['email'] = 'seu_email'; // sandbox
+		// $data['token'] ='seu_token'; // sandbox
+		// $data['email'] = 'seu_email'; // sandbox
 		
-		// $data['token'] ='seu_token'; // produção
-		// $data['email'] = 'seu_email'; // produção
+		$data['token'] ='seu_token'; // produção
+		$data['email'] = 'seu_email'; // produção
 		
 		$data['currency'] = 'BRL';
 		$data['reference'] = $reference;
@@ -144,8 +144,8 @@ class Home extends CI_Controller {
 		}
 
 
-		$url = 'https://ws.sandbox.pagseguro.uol.com.br/v2/checkout'; // sandbox
-		// $url = 'https://ws.pagseguro.uol.com.br/v2/checkout'; // produção
+		// $url = 'https://ws.sandbox.pagseguro.uol.com.br/v2/checkout'; // sandbox
+		$url = 'https://ws.pagseguro.uol.com.br/v2/checkout'; // produção
 
 		$data = http_build_query($data);
 
